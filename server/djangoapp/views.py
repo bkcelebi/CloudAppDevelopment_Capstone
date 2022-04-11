@@ -53,6 +53,7 @@ def login_request(request):
             return redirect('djangoapp:index')
         else:
             # If not, return to login page again
+            context['message'] = "Invalid username or password."
             return render(request, 'djangoapp/login.html', context)
     else:
         return render(request, 'djangoapp/login.html', context)
@@ -96,6 +97,7 @@ def registration_request(request):
             login(request, user)
             return redirect("djangoapp:index")
         else:
+            context['message'] = "User already exists."
             return render(request, 'djangoapp/registration.html', context)
 
 
