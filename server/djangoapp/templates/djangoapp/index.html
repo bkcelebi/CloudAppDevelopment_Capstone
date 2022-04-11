@@ -21,7 +21,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -31,6 +31,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
+                </ul> 
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="btn btn-success" href="#">{{ user.first_name }}({{ user.username }})</a>
+                        <a class="btn btn-outline-success" href="{% url 'djangoapp:logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <form class="form-inline" action="{% url 'djangoapp:registration %}" method="get">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Username" name="username">
+                                <input type="password" class="form-control" placeholder="Password" name="psw">
+                                <button type="button" class="btn btn-success" type="submit" href="{% url 'djangoapp:login' %}">Login</button>
+                                <button type="button" class="btn btn-outline-success" href="{% url 'djangoapp:registration' %}">Sign Up</button>
+                            </div>
+                        </form>
+                    </li>
+                    {% endif %}
                 </ul> 
             </div>            
         </nav>
