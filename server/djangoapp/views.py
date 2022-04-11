@@ -88,12 +88,12 @@ def registration_request(request):
             user_exist = True
         except:
             #if not, simply log this is a new user
-            logger.debug("{} is new user".format(username))
+            logger.error("New User")
         #if it is a new user
         if not user_exist:
             #create user in auth_user table
-            user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, password=password)
-            #login the user and redirect to index page
+            user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
+                                            password=password)
             login(request, user)
             return redirect("djangoapp:index")
         else:
