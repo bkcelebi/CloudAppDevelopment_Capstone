@@ -12,7 +12,7 @@ from django.utils.timezone import now
 
 class CarMake(models.Model):
     make_name = models.CharField(max_length=64)
-    make_description = models.CharField(Null=True, max_length=64)
+    make_description = models.CharField(null=True, max_length=64)
 
     def __str__(self):
         return "Name " + self.make_name + "," \
