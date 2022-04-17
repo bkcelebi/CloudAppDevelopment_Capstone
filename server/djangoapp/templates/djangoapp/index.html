@@ -55,7 +55,38 @@
         </div>            
     </nav>
     <!--Add a dealer table here -->
-
-    </body>
-
+    <div class="container">
+        <div class="table-title">
+            <h3>Know your Dealer</h3>
+            <p>Check out reviews on local dealerships in the table below. You may filter dealerships by state using the dropdown menu on the right.</p>
+        </div>
+        <table class="table" id="table" data-filter-control="true">
+            <thead>
+                <th data-field="id">ID</th>
+                <th data-field="full_name">Dealer Name</th>
+                <th data-field="city">City</th>
+                <th data-field="address">Address</th>
+                <th data-field="zip">Zip</th>
+                <th data-field="st" data-filter-control="select">State</th>
+            </thead>
+            <tbody>
+                {% for dealer in dealership_list %}
+                <tr>
+                    <td>{{dealer.id}}</td>
+                    <td><a href="{% url 'djangoapp:dealer_details' dealer.id%}">{{dealer.full_name}</td>
+                    <td>{{dealer.city}</td>
+                    <td>{{dealer.address}</td>
+                    <td>{{dealer.zip}</td>
+                    <td>{{dealer.st}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    $(function() {
+        $('#table').bootstrapTable()
+    })
+</script>
 </html>
