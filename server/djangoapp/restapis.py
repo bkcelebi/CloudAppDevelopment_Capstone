@@ -135,6 +135,7 @@ def get_dealer_by_id_from_cf(url, id):
             id=dealer_doc["id"], 
             lat=dealer_doc["lat"], 
             long=dealer_doc["long"],
+            short_name=dealer_doc["short_name"],
             st=dealer_doc["st"], 
             zip=dealer_doc["zip"])
 
@@ -158,12 +159,10 @@ def get_dealer_reviews_from_cf(url, **kwargs):
         for dealer_review in reviews:
             dealer_review = reviews
             
-            review_obj = DealerReview(
-                dealership=dealer_review["dealership"],
-                name=dealer_review["name"],
-                purchase=dealer_review["purchase"],
-                review=dealer_review["review"])
-
+            review_obj = DealerReview(dealership=dealer_review["dealership"],
+                                   name=dealer_review["name"],
+                                   purchase=dealer_review["purchase"],
+                                   review=dealer_review["review"])
             if "id" in dealer_review:
                 review_obj.id = dealer_review["id"]
             if "purchase_date" in dealer_review:
