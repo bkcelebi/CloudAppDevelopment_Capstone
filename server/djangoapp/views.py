@@ -108,7 +108,7 @@ def add_review(request, id):
     context["dealer"] = dealer
     if request.method == 'GET':
         # Get cars for the dealer
-        cars = CarModel.objects.filter(id=id)
+        cars = CarModel.objects.all()
         print(cars)
         context["cars"] = cars
         
@@ -130,7 +130,7 @@ def add_review(request, id):
                 if request.POST["purchasecheck"] == 'on':
                     payload["purchase"] = True
             payload["purchase_date"] = request.POST["purchasedate"]
-            # payload["car_make"] = car.type.name
+            payload["car_make"] = car.make.name
             payload["car_model"] = car.name
             payload["car_year"] = int(car.year.strftime("%Y"))
 
