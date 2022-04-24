@@ -29,7 +29,7 @@ APPEND_SLASH = True
 
 ALLOWED_HOSTS = ["bkcelebi123.eu-gb.mybluemix.net", "localhost", "istdub2016.eu-gb.mybluemix.net"]
 
-
+CSRF_TRUSTED_ORIGINS = ['Your application url']
 # Application definition
 
 INSTALLED_APPS = [
