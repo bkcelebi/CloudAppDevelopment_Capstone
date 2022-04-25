@@ -29,7 +29,7 @@ APPEND_SLASH = True
 
 ALLOWED_HOSTS = ["bkcelebi123.eu-gb.mybluemix.net", "localhost", "istdub2016.eu-gb.mybluemix.net"]
 
-CSRF_TRUSTED_ORIGINS = ['Your application url']
+CSRF_TRUSTED_ORIGINS = ['https://burakkcelebi-8000.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/']
 # Application definition
 
 INSTALLED_APPS = [
