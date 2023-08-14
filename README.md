@@ -11,6 +11,7 @@ Deep knowledge of Cloud Native Application Development has been demonstrated. A 
   <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="32" height="32" />
   <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="32" height="32" /> 
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI_avm-h8MEBXHu8CjIGr7mTduIgPQAt1prw&usqp=CAU" width="32" height="32" /> 
+  <img src="https://khanh.website/wp-content/uploads/2020/06/dockerfile.png" width="32" height="32" /> 
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYcgmuI83oDOREmJcaTHb2EdMXfP_UkAw9mtV9CgN_SkB6TSejW7rlSyXJgMLiNAdhK8g&usqp=CAU" width="32" height="32" /> 
 </p>
 
